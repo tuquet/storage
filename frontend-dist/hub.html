@@ -64,6 +64,18 @@
             placeholder="Bearer JWT / Token"
           />
         </div>
+        <div class="h-4 w-px bg-slate-800"></div>
+        <div class="flex items-center gap-2">
+          <span class="text-slate-400">Endpoint:</span>
+          <input
+            v-model="apiBase"
+            @change="fetchData"
+            type="text"
+            class="bg-slate-950 border border-slate-700 rounded px-2 py-1 text-slate-200 focus:outline-none focus:border-emerald-500 font-mono text-xs w-36"
+            placeholder="Origin (default)"
+            title="Custom API Endpoint (leave empty for same origin, or e.g. https://storage.flowup.io.vn)"
+          />
+        </div>
       </div>
     </header>
 
@@ -280,7 +292,7 @@
           <div>
             <label class="text-xs font-semibold text-slate-300 block mb-1">Windows Command Prompt (cmd.exe / PowerShell):</label>
             <div class="flex items-center gap-2 bg-slate-950 border border-slate-800 rounded-lg p-3 font-mono text-xs text-emerald-400">
-              <span class="select-all">net use Z: {{ currentOrigin }}/webdav /user:{{ tenantId }} {{ authToken || 'your-token' }}</span>
+              <span class="select-all">net use Z: {{ effectiveApiOrigin }}/webdav /user:{{ tenantId }} {{ authToken || 'your-token' }}</span>
             </div>
           </div>
 
@@ -305,12 +317,23 @@
         const activeTab = ref('profiles');
         const tenantId = ref(localStorage.getItem('tuquet_tenant_id') || 'default');
         const authToken = ref(localStorage.getItem('tuquet_auth_token') || '');
+        const apiBase = ref(localStorage.getItem('tuquet_api_base') || '');
         const profiles = ref([]);
         const documents = ref([]);
         const loadingProfiles = ref(false);
         const searchQuery = ref('');
         const fileInput = ref(null);
         const currentOrigin = ref(window.location.origin);
+
+        const effectiveApiOrigin = computed(() => {
+          const base = apiBase.value.trim().replace(/\/+$/, '');
+          return base || currentOrigin.value;
+        });
+
+        const apiUrl = (path) => {
+          const base = apiBase.value.trim().replace(/\/+$/, '');
+          return base ? `${base}${path}` : path;
+        };
 
         const getHeaders = () => {
           const h = { 'X-Tenant-Id': tenantId.value };
@@ -323,7 +346,7 @@
         const fetchProfiles = async () => {
           loadingProfiles.value = true;
           try {
-            const res = await fetch('/api/profiles', { headers: getHeaders() });
+            const res = await fetch(apiUrl('/api/profiles'), { headers: getHeaders() });
             const data = await res.json();
             if (data.success) {
               profiles.value = data.profiles || [];
@@ -337,7 +360,7 @@
 
         const fetchDocuments = async () => {
           try {
-            const res = await fetch('/api/files', { headers: getHeaders() });
+            const res = await fetch(apiUrl('/api/files'), { headers: getHeaders() });
             const data = await res.json();
             if (data.success) {
               documents.value = data.files || [];
@@ -350,13 +373,14 @@
         const fetchData = () => {
           localStorage.setItem('tuquet_tenant_id', tenantId.value);
           localStorage.setItem('tuquet_auth_token', authToken.value);
+          localStorage.setItem('tuquet_api_base', apiBase.value);
           fetchProfiles();
           fetchDocuments();
         };
 
         const downloadProfile = async (id) => {
           try {
-            const res = await fetch(`/api/profiles/${id}/download-url`, { headers: getHeaders() });
+            const res = await fetch(apiUrl(`/api/profiles/${id}/download-url`), { headers: getHeaders() });
             const data = await res.json();
             if (data.success && data.download_url) {
               window.open(data.download_url, '_blank');
@@ -368,7 +392,7 @@
 
         const unlockProfile = async (id) => {
           try {
-            const res = await fetch(`/api/profiles/${id}/unlock`, {
+            const res = await fetch(apiUrl(`/api/profiles/${id}/unlock`), {
               method: 'POST',
               headers: getHeaders(),
             });
@@ -384,7 +408,7 @@
         const deleteProfile = async (id) => {
           if (!confirm(`Delete profile snapshot ${id}?`)) return;
           try {
-            const res = await fetch(`/api/profiles/${id}`, {
+            const res = await fetch(apiUrl(`/api/profiles/${id}`), {
               method: 'DELETE',
               headers: getHeaders(),
             });
@@ -408,7 +432,7 @@
           form.append('dir', '/');
 
           try {
-            const res = await fetch('/api/files/upload', {
+            const res = await fetch(apiUrl('/api/files/upload'), {
               method: 'POST',
               headers: getHeaders(),
               body: form,
@@ -426,7 +450,7 @@
 
         const downloadDocument = async (id) => {
           try {
-            const res = await fetch(`/api/files/${id}?download=true`, { headers: getHeaders() });
+            const res = await fetch(apiUrl(`/api/files/${id}?download=true`), { headers: getHeaders() });
             const data = await res.json();
             if (data.success && data.download_url) {
               window.open(data.download_url, '_blank');
@@ -439,7 +463,7 @@
         const deleteDoc = async (id) => {
           if (!confirm('Delete this document?')) return;
           try {
-            const res = await fetch(`/api/files/${id}`, {
+            const res = await fetch(apiUrl(`/api/files/${id}`), {
               method: 'DELETE',
               headers: getHeaders(),
             });
@@ -472,7 +496,7 @@
         };
 
         const getFileUrl = (doc) => {
-          return `/file/${doc.file_name}`;
+          return apiUrl(`/file/${doc.file_name}`);
         };
 
         const filteredDocuments = computed(() => {
@@ -489,6 +513,8 @@
           activeTab,
           tenantId,
           authToken,
+          apiBase,
+          effectiveApiOrigin,
           profiles,
           documents,
           loadingProfiles,
