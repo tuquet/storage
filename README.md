@@ -12,7 +12,7 @@ Tuquet Storage Hub extends and hardens the modern Cloudflare Pages/Functions sta
 - **Antidetect Browser Profile Sync**: Presigned S3/R2 direct streaming for `.tar.zst` and `.zip` archives with atomic conditional SQL lease locking (`WHERE locked_by_device_id IS NULL OR locked_until < now`).
 - **RFC 4918 WebDAV Server**: Mountable WebDAV endpoints (`/webdav/*`) isolated to `tenants/{tenant_id}/`.
 - **Security Hardened**: Removed all third-party Sentry DSNs and external telemetry pings; fail-closed HMAC-SHA256 JWT & Device Token verification.
-- **Upstream Foundation**: Built upon and adapted from [MarSeventh/CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed).
+- **Upstream Foundation**: Built upon and adapted from [tuquet/storage](https://github.com/tuquet/storage).
 
 ---
 
@@ -25,12 +25,12 @@ Tuquet Storage Hub extends and hardens the modern Cloudflare Pages/Functions sta
 
 > [!IMPORTANT]
 >
-> **If you encounter issues, please check the [announcements](https://github.com/MarSeventh/CloudFlare-ImgBed/discussions/categories/announcements) and [Telegram channel](https://t.me/sanyue_club) first. Important notices and breaking changes will be explained in the announcements!**
+> **If you encounter issues, please check the [announcements](https://github.com/tuquet/storage/discussions/categories/announcements) and [Telegram channel](https://t.me/tuquet) first. Important notices and breaking changes will be explained in the announcements!**
 
 
 # 1. 💡 Introduction
 
-CloudFlare ImgBed is a self-hosted image and file hosting solution for Docker and serverless environments, bringing **Telegram**, **Discord**, **Cloudflare R2**, **S3-compatible storage**, **Hugging Face**, **WebDAV**, and more into one management interface. It provides file management, authentication, directory organization, content moderation, a RESTful API, and WebDAV, with a growing range of personalized AI capabilities such as image tag recognition. It is suited to personal image hosting, website asset management, and lightweight file distribution. **[View all features →](https://cfbed.sanyue.de/en/guide/features.html)**
+CloudFlare ImgBed is a self-hosted image and file hosting solution for Docker and serverless environments, bringing **Telegram**, **Discord**, **Cloudflare R2**, **S3-compatible storage**, **Hugging Face**, **WebDAV**, and more into one management interface. It provides file management, authentication, directory organization, content moderation, a RESTful API, and WebDAV, with a growing range of personalized AI capabilities such as image tag recognition. It is suited to personal image hosting, website asset management, and lightweight file distribution. **[View all features →](https://storage.tuquet.com/en/guide/features.html)**
 
 ![CloudFlare](readme/海报.png)
 
@@ -126,24 +126,24 @@ CloudFlare ImgBed is a self-hosted image and file hosting solution for Docker an
 
 The documentation covers deployment, storage configuration, feature usage, RESTful API integration, WebDAV, version upgrades, and troubleshooting. Whether you are deploying the project for the first time or maintaining an existing instance, you can find the relevant instructions here.
 
-**[Read the full documentation →](https://cfbed.sanyue.de/en)**
+**[Read the full documentation →](https://storage.tuquet.com/en)**
 
 ## 📝 Changelog
 
 Follow the latest features, bug fixes, compatibility changes, and upgrade notes.
 
-[![Recent Updates](https://recent-update.cfbed.sanyue.de/en)](https://cfbed.sanyue.de/en/guide/update-log.html)
+[![Recent Updates](https://recent-update.cfbed.sanyue.de/en)](https://storage.tuquet.com/en/guide/update-log.html)
 
 # 4. 🌱 Ecosystem
 
-An open-source ecosystem grows through community support. Visit the [CloudFlare ImgBed Ecosystem](https://cfbed.sanyue.de/en/about/ecosystem.html) page to explore the following resources and more:
+An open-source ecosystem grows through community support. Visit the [CloudFlare ImgBed Ecosystem](https://storage.tuquet.com/en/about/ecosystem.html) page to explore the following resources and more:
 
 - **Plugin Extensions**: Browser extensions, integrations for Typecho, WordPress, and Obsidian, OpenList drivers, and more.
 - **Companion Applications**: Desktop clients, bot tools, and more.
 - **AI Agent Applications**: Official project skills and related tools.
 - **Tutorials and Guides**: High-quality videos and articles from content creators.
 
-Discover useful plugins, applications, and tutorials, or share your own work with the community. See the [Ecosystem Call for Contributions](https://github.com/MarSeventh/CloudFlare-ImgBed/discussions/606) for submission guidelines. We look forward to your participation!
+Discover useful plugins, applications, and tutorials, or share your own work with the community. See the [Ecosystem Call for Contributions](https://github.com/tuquet/storage/discussions/606) for submission guidelines. We look forward to your participation!
 
 # 5. 💝 Support & Sponsors
 
@@ -169,13 +169,13 @@ Thank you to every sponsor who supports this project! Your support helps sustain
 
 Thank you to everyone who has contributed code, documentation, ideas, and feedback!
 
-[![Contributors](https://contrib.rocks/image?repo=Marseventh/Cloudflare-ImgBed)](https://github.com/MarSeventh/CloudFlare-ImgBed/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=Marseventh/Cloudflare-ImgBed)](https://github.com/tuquet/storage/graphs/contributors)
 
 ## ⭐ Star History
 
 **If you find the project useful, please consider giving it a Star ⭐. Thank you for your support!**
 
-<a href="https://github.com/MarSeventh/CloudFlare-ImgBed">
+<a href="https://github.com/tuquet/storage">
  <picture>
    <source media="(prefers-color-scheme: dark)" srcset="https://marseventh.github.io/CloudFlare-ImgBed/star-history-dark.svg" />
    <source media="(prefers-color-scheme: light)" srcset="https://marseventh.github.io/CloudFlare-ImgBed/star-history-light.svg" />
@@ -192,8 +192,8 @@ Thank you to everyone who has contributed code, documentation, ideas, and feedba
 
 ## 🔗 Related Open Source Projects
 
-- **Web frontend**: [MarSeventh/Sanyue-ImgHub](https://github.com/MarSeventh/Sanyue-ImgHub)
-- **Desktop client**: [MarSeventh/satellite](https://github.com/MarSeventh/satellite)
+- **Web frontend**: [MarSeventh/Sanyue-ImgHub](https://github.com/tuquet/storage)
+- **Desktop client**: [MarSeventh/satellite](https://github.com/tuquet/satellite)
 - **Upstream project**: [cf-pages/Telegraph-Image](https://github.com/cf-pages/Telegraph-Image)
 
 CloudFlare ImgBed evolved from Telegraph-Image. Thanks to its original authors and contributors.

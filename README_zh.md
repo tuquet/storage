@@ -1,21 +1,21 @@
 <div align="center">
-    <a href="https://github.com/MarSeventh/CloudFlare-ImgBed"><img width="80%" alt="logo" src="readme/banner.png" /></a>
+    <a href="https://github.com/tuquet/storage"><img width="80%" alt="logo" src="readme/banner.png" /></a>
     <p><em>🗂️ 打破图床边界，构建你的专属开源文件托管引擎。</em></p>
     <p>
-        <a href="https://github.com/MarSeventh/CloudFlare-ImgBed/blob/main/README_zh.md">简体中文</a> | <a href="https://github.com/MarSeventh/CloudFlare-ImgBed/blob/main/README.md">English</a> | <a href="https://cfbed.sanyue.de">官方网站</a> | <a href="https://t.me/sanyue_club">Telegram 频道</a>
+        <a href="https://github.com/tuquet/storage/blob/main/README_zh.md">简体中文</a> | <a href="https://github.com/tuquet/storage/blob/main/README.md">English</a> | <a href="https://storage.tuquet.com">官方网站</a> | <a href="https://t.me/tuquet">Telegram 频道</a>
     </p>
     <p align="center">
-        <a href="https://github.com/MarSeventh/CloudFlare-ImgBed/blob/main/LICENSE"><img src="https://img.shields.io/github/license/MarSeventh/CloudFlare-ImgBed" alt="License" /></a>
-        <a href="https://github.com/MarSeventh/CloudFlare-ImgBed/releases"><img src="https://img.shields.io/github/release/MarSeventh/CloudFlare-ImgBed" alt="latest version" /></a>
+        <a href="https://github.com/tuquet/storage/blob/main/LICENSE"><img src="https://img.shields.io/github/license/tuquet/storage" alt="License" /></a>
+        <a href="https://github.com/tuquet/storage/releases"><img src="https://img.shields.io/github/release/tuquet/storage" alt="latest version" /></a>
         <a href="https://hub.docker.com/r/marseventh/cloudflare-imgbed"><img src="https://img.shields.io/docker/pulls/marseventh/cloudflare-imgbed" alt="Docker Pulls" /></a>
-        <a href="https://t.me/sanyue_club"><img src="https://img.shields.io/badge/-Sanyue-26A5E4?logo=telegram&logoColor=white" alt="Telegram Sanyue" /></a>
-        <a href="https://github.com/MarSeventh/CloudFlare-ImgBed/stargazers"><img src="https://img.shields.io/github/stars/MarSeventh/CloudFlare-ImgBed" alt="Stars" /></a>
-        <a href="https://github.com/MarSeventh/CloudFlare-ImgBed/network/members"><img src="https://img.shields.io/github/forks/MarSeventh/CloudFlare-ImgBed" alt="Forks" /></a>
-        <a href="https://atomgit.com/MarSeventh/CloudFlare-ImgBed"><img src="https://atomgit.com/MarSeventh/CloudFlare-ImgBed/star/badge.svg" alt="G-star" /></a>
+        <a href="https://t.me/tuquet"><img src="https://img.shields.io/badge/-Sanyue-26A5E4?logo=telegram&logoColor=white" alt="Telegram Sanyue" /></a>
+        <a href="https://github.com/tuquet/storage/stargazers"><img src="https://img.shields.io/github/stars/tuquet/storage" alt="Stars" /></a>
+        <a href="https://github.com/tuquet/storage/network/members"><img src="https://img.shields.io/github/forks/tuquet/storage" alt="Forks" /></a>
+        <a href="https://atomgit.com/tuquet/storage"><img src="https://atomgit.com/tuquet/storage/star/badge.svg" alt="G-star" /></a>
     </p>
     <p align="center">
         <a href="https://trendshift.io/repositories/14324" target="_blank"><img src="https://trendshift.io/api/badge/repositories/14324" alt="GitHub Trending" width="250" /></a>
-        <a href="https://hellogithub.com/repository/MarSeventh/CloudFlare-ImgBed" target="_blank"><img src="https://api.hellogithub.com/v1/widgets/recommend.svg?rid=71d65ace215945b0909d4c75c31b9fcb&claim_uid=6DsuqF4hInJWerv&theme=neutral" alt="Featured｜HelloGitHub" width="250" /></a>
+        <a href="https://hellogithub.com/repository/tuquet/storage" target="_blank"><img src="https://api.hellogithub.com/v1/widgets/recommend.svg?rid=71d65ace215945b0909d4c75c31b9fcb&claim_uid=6DsuqF4hInJWerv&theme=neutral" alt="Featured｜HelloGitHub" width="250" /></a>
     </p>
 </div>
 
@@ -23,12 +23,12 @@
 
 > [!IMPORTANT]
 >
-> **遇到问题请务必先查看[公告](https://github.com/MarSeventh/CloudFlare-ImgBed/discussions/categories/announcements)和[Telegram频道](https://t.me/sanyue_club)信息，重要通知和非兼容性更新内容均会在公告中说明！**
+> **遇到问题请务必先查看[公告](https://github.com/tuquet/storage/discussions/categories/announcements)和[Telegram频道](https://t.me/tuquet)信息，重要通知和非兼容性更新内容均会在公告中说明！**
 
 
 # 1. 💡 项目介绍
 
-CloudFlare ImgBed 是支持 Docker 与 Serverless 部署的自建图床和文件托管方案，可将 **Telegram**、**Discord**、**Cloudflare R2**、**S3 兼容存储**、**Hugging Face**、**WebDAV** 等渠道统一接入一个管理界面。项目提供文件管理、身份认证、目录组织、内容审核、RESTful API 与 WebDAV，同时也在不断增加 AI 驱动的图片标签识别等个性化能力，适用于个人图床、网站资源管理和轻量文件分发。 **[查看完整功能 →](https://cfbed.sanyue.de/guide/features.html)**
+CloudFlare ImgBed 是支持 Docker 与 Serverless 部署的自建图床和文件托管方案，可将 **Telegram**、**Discord**、**Cloudflare R2**、**S3 兼容存储**、**Hugging Face**、**WebDAV** 等渠道统一接入一个管理界面。项目提供文件管理、身份认证、目录组织、内容审核、RESTful API 与 WebDAV，同时也在不断增加 AI 驱动的图片标签识别等个性化能力，适用于个人图床、网站资源管理和轻量文件分发。 **[查看完整功能 →](https://storage.tuquet.com/guide/features.html)**
 
 ![CloudFlare](readme/海报.png)
 
@@ -126,24 +126,24 @@ CloudFlare ImgBed 是支持 Docker 与 Serverless 部署的自建图床和文件
 
 项目文档涵盖部署方式、存储渠道配置、功能使用、RESTful API、WebDAV、版本升级及常见问题等内容。无论是首次部署还是日常维护，都可以在文档中找到对应的操作说明。
 
-**[查看完整文档 →](https://cfbed.sanyue.de)**
+**[查看完整文档 →](https://storage.tuquet.com)**
 
 ## 📝 更新日志
 
 了解项目的最新功能、问题修复、兼容性变更和升级注意事项。
 
-[![更新日志](https://recent-update.cfbed.sanyue.de/cn)](https://cfbed.sanyue.de/guide/update-log.html)
+[![更新日志](https://recent-update.cfbed.sanyue.de/cn)](https://storage.tuquet.com/guide/update-log.html)
 
 # 4. 🌱 项目生态
 
-欢迎前往 [CloudFlare ImgBed 生态](https://cfbed.sanyue.de/about/ecosystem.html)，探索社区提供的扩展、应用和教程，包括：
+欢迎前往 [CloudFlare ImgBed 生态](https://storage.tuquet.com/about/ecosystem.html)，探索社区提供的扩展、应用和教程，包括：
 
 - **优秀的插件扩展**：浏览器扩展，Typecho、WordPress、Obsidian 等平台的集成插件，OpenList 驱动等
 - **丰富的周边应用**：桌面客户端、Bot 辅助工具等
 - **AI 智能体应用**：项目官方 Skill 及相关工具
 - **优质的教程内容**：内容创作者分享的优质视频和图文教程
 
-您也可以向社区分享自己的作品，提交规范请参见[生态建设征集令](https://github.com/MarSeventh/CloudFlare-ImgBed/discussions/606)，期待您的参与！
+您也可以向社区分享自己的作品，提交规范请参见[生态建设征集令](https://github.com/tuquet/storage/discussions/606)，期待您的参与！
 
 # 5. 💝 支持与赞助
 
@@ -169,13 +169,13 @@ CloudFlare ImgBed 是支持 Docker 与 Serverless 部署的自建图床和文件
 
 感谢所有为项目贡献代码、文档、创意和反馈的开发者！
 
-[![贡献者](https://contrib.rocks/image?repo=Marseventh/Cloudflare-ImgBed)](https://github.com/MarSeventh/CloudFlare-ImgBed/graphs/contributors)
+[![贡献者](https://contrib.rocks/image?repo=Marseventh/Cloudflare-ImgBed)](https://github.com/tuquet/storage/graphs/contributors)
 
 ## ⭐ Star 趋势
 
 **如果这个项目对您有所帮助，欢迎点亮一个 Star ⭐，感谢您的支持！**
 
-<a href="https://github.com/MarSeventh/CloudFlare-ImgBed">
+<a href="https://github.com/tuquet/storage">
  <picture>
    <source media="(prefers-color-scheme: dark)" srcset="https://marseventh.github.io/CloudFlare-ImgBed/star-history-dark.svg" />
    <source media="(prefers-color-scheme: light)" srcset="https://marseventh.github.io/CloudFlare-ImgBed/star-history-light.svg" />
@@ -192,8 +192,8 @@ CloudFlare ImgBed 是支持 Docker 与 Serverless 部署的自建图床和文件
 
 ## 🔗 相关开源项目
 
-- **Web 前端**：[MarSeventh/Sanyue-ImgHub](https://github.com/MarSeventh/Sanyue-ImgHub)
-- **桌面客户端**：[MarSeventh/satellite](https://github.com/MarSeventh/satellite)
+- **Web 前端**：[MarSeventh/Sanyue-ImgHub](https://github.com/tuquet/storage)
+- **桌面客户端**：[MarSeventh/satellite](https://github.com/tuquet/satellite)
 - **上游项目**：[cf-pages/Telegraph-Image](https://github.com/cf-pages/Telegraph-Image)
 
 CloudFlare ImgBed 由 Telegraph-Image 发展而来，感谢原项目作者及所有贡献者。

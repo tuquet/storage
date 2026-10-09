@@ -5,6 +5,8 @@ const PUBLIC_API_PREFIXES = [
   '/api/auth/',
   '/api/public/',
   '/api/manage/sysConfig/page',
+  '/api/userConfig',
+  '/api/bing/',
 ];
 
 export async function onRequest(context: {
