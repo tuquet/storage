@@ -1,0 +1,21 @@
+name = "tuquet-storage"
+pages_build_output_dir = "./frontend-dist"
+compatibility_date = "2024-08-21"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ENVIRONMENT = "development"
+STORAGE_PREFIX = "tenants"
+
+[[d1_databases]]
+binding = "img_d1"
+database_name = "METADATA_D1"
+database_id = "00000000-0000-0000-0000-000000000001"
+
+[[r2_buckets]]
+binding = "img_r2"
+bucket_name = "tuquet-storage"
+
+[[kv_namespaces]]
+binding = "img_url"
+id = "00000000000000000000000000000002"

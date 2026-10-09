@@ -17,21 +17,23 @@ D1Database.prototype.putFile = function(fileId, value, options) {
     value = value || '';
     options = options || {};
     var metadata = options.metadata || {};
+    var tenantId = options.tenantId || (metadata && metadata.tenant_id) || 'default';
     
     // 从metadata中提取字段用于索引
     var extractedFields = this.extractMetadataFields(metadata);
     
     var stmt = this.db.prepare(
         'INSERT OR REPLACE INTO files (' +
-        'id, value, metadata, file_name, file_type, file_size, ' +
+        'id, tenant_id, value, metadata, file_name, file_type, file_size, ' +
         'upload_ip, upload_address, list_type, timestamp, ' +
         'label, directory, channel, channel_name, ' +
         'tg_file_id, tg_chat_id, tg_bot_token, is_chunked' +
-        ') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+        ') VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
     );
     
     return stmt.bind(
         fileId,
+        tenantId,
         value,
         JSON.stringify(metadata),
         extractedFields.fileName,
@@ -55,10 +57,14 @@ D1Database.prototype.putFile = function(fileId, value, options) {
 /**
  * 获取文件记录 (替代 KV.get)
  */
-D1Database.prototype.getFile = function(fileId) {
+D1Database.prototype.getFile = function(fileId, tenantId) {
     var self = this;
-    var stmt = this.db.prepare('SELECT * FROM files WHERE id = ?');
-    return stmt.bind(fileId).first().then(function(result) {
+    var query = tenantId 
+        ? 'SELECT * FROM files WHERE id = ? AND tenant_id = ?' 
+        : 'SELECT * FROM files WHERE id = ?';
+    var stmt = this.db.prepare(query);
+    var bindStmt = tenantId ? stmt.bind(fileId, tenantId) : stmt.bind(fileId);
+    return bindStmt.first().then(function(result) {
         if (!result) return null;
         
         return {
@@ -71,16 +77,19 @@ D1Database.prototype.getFile = function(fileId) {
 /**
  * 获取文件记录包含元数据 (替代 KV.getWithMetadata)
  */
-D1Database.prototype.getFileWithMetadata = function(fileId) {
-    return this.getFile(fileId);
+D1Database.prototype.getFileWithMetadata = function(fileId, tenantId) {
+    return this.getFile(fileId, tenantId);
 };
 
 /**
  * 删除文件记录 (替代 KV.delete)
  */
-D1Database.prototype.deleteFile = function(fileId) {
-    var stmt = this.db.prepare('DELETE FROM files WHERE id = ?');
-    return stmt.bind(fileId).run();
+D1Database.prototype.deleteFile = function(fileId, tenantId) {
+    var query = tenantId 
+        ? 'DELETE FROM files WHERE id = ? AND tenant_id = ?' 
+        : 'DELETE FROM files WHERE id = ?';
+    var stmt = this.db.prepare(query);
+    return (tenantId ? stmt.bind(fileId, tenantId) : stmt.bind(fileId)).run();
 };
 
 /**
@@ -91,19 +100,27 @@ D1Database.prototype.listFiles = function(options) {
     var prefix = options.prefix || '';
     var limit = options.limit || 1000;
     var cursor = options.cursor || null;
+    var tenantId = options.tenantId || null;
     
     var query = 'SELECT id, metadata FROM files';
     var params = [];
+    var whereClauses = [];
     
+    if (tenantId) {
+        whereClauses.push('tenant_id = ?');
+        params.push(tenantId);
+    }
     if (prefix) {
-        query += ' WHERE id LIKE ?';
+        whereClauses.push('id LIKE ?');
         params.push(prefix + '%');
     }
-    
     if (cursor) {
-        query += prefix ? ' AND' : ' WHERE';
-        query += ' id > ?';
+        whereClauses.push('id > ?');
         params.push(cursor);
+    }
+    
+    if (whereClauses.length > 0) {
+        query += ' WHERE ' + whereClauses.join(' AND ');
     }
     
     query += ' ORDER BY id LIMIT ?';

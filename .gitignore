@@ -1,7 +1,8 @@
 .wrangler/*
 data/*
 node_modules
-/wrangler.toml
+/wrangler.local.toml
+/wrangler.secret.toml
 /deploy/worker/worker-secrets.json
 .DS_Store
 

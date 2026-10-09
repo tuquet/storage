@@ -1,22 +1,24 @@
+# Tuquet Multi-Tenant Storage Hub
+
+> **Dedicated Multi-Tenant Object Storage, Cloudflare D1/R2 Engine & RFC 4918 WebDAV Server for the Tuquet Antidetect Ecosystem.**
+
+[![CI](https://github.com/tuquet/storage/actions/workflows/ci.yml/badge.svg)](https://github.com/tuquet/storage/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+## Overview
+
+Tuquet Storage Hub extends and hardens the modern Cloudflare Pages/Functions stack into an enterprise-grade multi-tenant storage subsystem:
+- **Multi-Tenant Data Isolation**: D1 SQLite schema with strict `tenant_id` scoping and indexed queries.
+- **Antidetect Browser Profile Sync**: Presigned S3/R2 direct streaming for `.tar.zst` and `.zip` archives with atomic conditional SQL lease locking (`WHERE locked_by_device_id IS NULL OR locked_until < now`).
+- **RFC 4918 WebDAV Server**: Mountable WebDAV endpoints (`/webdav/*`) isolated to `tenants/{tenant_id}/`.
+- **Security Hardened**: Removed all third-party Sentry DSNs and external telemetry pings; fail-closed HMAC-SHA256 JWT & Device Token verification.
+- **Upstream Foundation**: Built upon and adapted from [MarSeventh/CloudFlare-ImgBed](https://github.com/MarSeventh/CloudFlare-ImgBed).
+
+---
+
 <div align="center">
-    <a href="https://github.com/MarSeventh/CloudFlare-ImgBed"><img width="80%" alt="logo" src="readme/banner.png" /></a>
-    <p><em>🗂️ Beyond image hosting: an all-in-one, open-source file management hub.</em></p>
-    <p>
-        <a href="https://github.com/MarSeventh/CloudFlare-ImgBed/blob/main/README_zh.md">简体中文</a> | <a href="https://github.com/MarSeventh/CloudFlare-ImgBed/blob/main/README.md">English</a> | <a href="https://cfbed.sanyue.de/en">Official Website</a> | <a href="https://t.me/sanyue_club">Telegram Channel</a>
-    </p>
-    <p align="center">
-        <a href="https://github.com/MarSeventh/CloudFlare-ImgBed/blob/main/LICENSE"><img src="https://img.shields.io/github/license/MarSeventh/CloudFlare-ImgBed" alt="License" /></a>
-        <a href="https://github.com/MarSeventh/CloudFlare-ImgBed/releases"><img src="https://img.shields.io/github/release/MarSeventh/CloudFlare-ImgBed" alt="latest version" /></a>
-        <a href="https://hub.docker.com/r/marseventh/cloudflare-imgbed"><img src="https://img.shields.io/docker/pulls/marseventh/cloudflare-imgbed" alt="Docker Pulls" /></a>
-        <a href="https://t.me/sanyue_club"><img src="https://img.shields.io/badge/-Sanyue-26A5E4?logo=telegram&logoColor=white" alt="Telegram Sanyue" /></a>
-        <a href="https://github.com/MarSeventh/CloudFlare-ImgBed/stargazers"><img src="https://img.shields.io/github/stars/MarSeventh/CloudFlare-ImgBed" alt="Stars" /></a>
-        <a href="https://github.com/MarSeventh/CloudFlare-ImgBed/network/members"><img src="https://img.shields.io/github/forks/MarSeventh/CloudFlare-ImgBed" alt="Forks" /></a>
-        <a href="https://atomgit.com/MarSeventh/CloudFlare-ImgBed"><img src="https://atomgit.com/MarSeventh/CloudFlare-ImgBed/star/badge.svg" alt="G-star" /></a>
-    </p>
-    <p align="center">
-        <a href="https://trendshift.io/repositories/14324" target="_blank"><img src="https://trendshift.io/api/badge/repositories/14324" alt="GitHub Trending" width="250" /></a>
-        <a href="https://hellogithub.com/repository/MarSeventh/CloudFlare-ImgBed" target="_blank"><img src="https://api.hellogithub.com/v1/widgets/recommend.svg?rid=71d65ace215945b0909d4c75c31b9fcb&claim_uid=6DsuqF4hInJWerv&theme=neutral" alt="Featured｜HelloGitHub" width="250" /></a>
-    </p>
+    <a href="https://github.com/tuquet/storage"><img width="80%" alt="logo" src="readme/banner.png" /></a>
+    <p><em>🗂️ Beyond image hosting: an all-in-one, multi-tenant file management and browser profile hub.</em></p>
 </div>
 
 ---
