@@ -1,12 +1,9 @@
 import { authenticateRequest } from './utils/auth.js';
 
-// Public endpoints that do not require authentication
-const PUBLIC_API_PREFIXES = [
-  '/api/auth/',
-  '/api/public/',
-  '/api/manage/sysConfig/page',
-  '/api/userConfig',
-  '/api/bing/',
+// Multi-tenant API endpoints that require Supabase JWT or Device Token authentication
+const MULTI_TENANT_API_PREFIXES = [
+  '/api/files',
+  '/api/profiles',
 ];
 
 export async function onRequest(context: {
@@ -18,12 +15,7 @@ export async function onRequest(context: {
   const url = new URL(context.request.url);
   const pathname = url.pathname;
 
-  // 1. Static frontend assets and root routes pass through
-  if (!pathname.startsWith('/api/') && !pathname.startsWith('/dav/')) {
-    return await context.next();
-  }
-
-  // 2. Allow CORS preflight OPTIONS requests
+  // 1. Allow CORS preflight OPTIONS requests for all endpoints
   if (context.request.method === 'OPTIONS') {
     return new Response(null, {
       status: 204,
@@ -35,8 +27,12 @@ export async function onRequest(context: {
     });
   }
 
-  // 3. Allow public API endpoints
-  if (PUBLIC_API_PREFIXES.some(prefix => pathname.startsWith(prefix))) {
+  // 2. Check if route is a Tuquet Multi-Tenant API endpoint
+  const isMultiTenant = MULTI_TENANT_API_PREFIXES.some(prefix => pathname.startsWith(prefix));
+
+  if (!isMultiTenant) {
+    // Pass through to static frontend assets, WebDAV (/dav/), and native ImgHub APIs
+    // (ImgHub APIs manage their own authentication via /api/manage/_middleware.js, dualAuthCheck, etc.)
     return await context.next();
   }
 
