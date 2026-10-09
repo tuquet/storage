@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="releasesGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#releasesGrad)"/>
+  <!-- Release Deployment Rocket Body -->
+  <path d="M24.5 7.5C21 8.5 16 11 13 14.5l-1.5 1.5 4.5 4.5 1.5-1.5c3.5-3 6-8 7-11.5z" fill="#ffffff"/>
+  <!-- Left & Right Stabilizer Fins -->
+  <path d="M12.5 17.5L8 20l2.5-4.5z" fill="#ffffff"/>
+  <path d="M17.5 12.5L20 8l-4.5 2.5z" fill="#ffffff"/>
+  <!-- Cabin Porthole -->
+  <circle cx="18" cy="14" r="1.8" fill="#047857" stroke="#ffffff" stroke-width="1"/>
+  <!-- Launch Propulsion Exhaust Flames -->
+  <path d="M10.5 21.5l-4 4M8.5 21.5l-3 1.5M10.5 23.5l-1.5 3" fill="none" stroke="#a7f3d0" stroke-width="1.6" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="automaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#automaGrad)"/>
+  <!-- Workflow orchestration nodes & connector -->
+  <circle cx="9" cy="16" r="3" fill="#ffffff"/>
+  <circle cx="23" cy="10" r="3" fill="#ffffff"/>
+  <circle cx="23" cy="22" r="3" fill="#ffffff"/>
+  <path d="M12 16h3c2 0 3-1 4-2.5l2-2.5M15 16c1 0 2 1 3 2.5l3 2.5" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="dataGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#dataGrad)"/>
+  <!-- Bar chart with upward analytics trendline in pure white -->
+  <rect x="8" y="17" width="3.5" height="7" rx="1" fill="#ffffff" opacity="0.85"/>
+  <rect x="14.25" y="13" width="3.5" height="11" rx="1" fill="#ffffff" opacity="0.85"/>
+  <rect x="20.5" y="9" width="3.5" height="15" rx="1" fill="#ffffff" opacity="0.85"/>
+  <path d="M7 13.5l5.5-4.5 5.5 3.5 6.5-5" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="24.5" cy="7.5" r="1.5" fill="#ffffff"/>
+</svg>

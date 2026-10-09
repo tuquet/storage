@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="tqGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#09090b"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#tqGrad)"/>
+  <rect x="0.5" y="0.5" width="31" height="31" rx="7.5" fill="none" stroke="#27272a"/>
+  <!-- TQ monogram -->
+  <path d="M7 11h9M11.5 11v11" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="21" cy="16" r="4.5" fill="none" stroke="#f4f4f5" stroke-width="2.2"/>
+  <path d="M24 19.5l2.5 2.5" stroke="#f4f4f5" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

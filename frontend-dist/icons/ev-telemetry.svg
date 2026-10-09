@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="evGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#evGrad)"/>
+  <!-- EV Car with lightning pulse -->
+  <path d="M8 18.5L10.5 12h11l2.5 6.5" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="6.5" y="18.5" width="19" height="5.5" rx="1.5" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+  <circle cx="10" cy="21.2" r="1.2" fill="#ffffff"/>
+  <circle cx="22" cy="21.2" r="1.2" fill="#ffffff"/>
+  <!-- Lightning bolt on hood/center -->
+  <path d="M17 7.5l-3 4h3l-2 4 4.5-5.5h-3l2-2.5z" fill="#ffffff"/>
+</svg>

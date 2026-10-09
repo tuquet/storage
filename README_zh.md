@@ -11,11 +11,6 @@
         <a href="https://t.me/tuquet"><img src="https://img.shields.io/badge/-Sanyue-26A5E4?logo=telegram&logoColor=white" alt="Telegram Sanyue" /></a>
         <a href="https://github.com/tuquet/storage/stargazers"><img src="https://img.shields.io/github/stars/tuquet/storage" alt="Stars" /></a>
         <a href="https://github.com/tuquet/storage/network/members"><img src="https://img.shields.io/github/forks/tuquet/storage" alt="Forks" /></a>
-        <a href="https://atomgit.com/tuquet/storage"><img src="https://atomgit.com/tuquet/storage/star/badge.svg" alt="G-star" /></a>
-    </p>
-    <p align="center">
-        <a href="https://trendshift.io/repositories/14324" target="_blank"><img src="https://trendshift.io/api/badge/repositories/14324" alt="GitHub Trending" width="250" /></a>
-        <a href="https://hellogithub.com/repository/tuquet/storage" target="_blank"><img src="https://api.hellogithub.com/v1/widgets/recommend.svg?rid=71d65ace215945b0909d4c75c31b9fcb&claim_uid=6DsuqF4hInJWerv&theme=neutral" alt="Featured｜HelloGitHub" width="250" /></a>
     </p>
 </div>
 
@@ -28,7 +23,7 @@
 
 # 1. 💡 项目介绍
 
-CloudFlare ImgBed 是支持 Docker 与 Serverless 部署的自建图床和文件托管方案，可将 **Telegram**、**Discord**、**Cloudflare R2**、**S3 兼容存储**、**Hugging Face**、**WebDAV** 等渠道统一接入一个管理界面。项目提供文件管理、身份认证、目录组织、内容审核、RESTful API 与 WebDAV，同时也在不断增加 AI 驱动的图片标签识别等个性化能力，适用于个人图床、网站资源管理和轻量文件分发。 **[查看完整功能 →](https://storage.tuquet.com/guide/features.html)**
+CloudFlare ImgBed 是支持 Docker 与 Serverless 部署的自建图床和文件托管方案，可将 **Telegram**、**Discord**、**Cloudflare R2**、**S3 兼容存储**、**Hugging Face**、**WebDAV** 等渠道统一接入一个管理界面。项目提供文件管理、身份认证、目录组织、内容审核、RESTful API 与 WebDAV，同时也在不断增加 AI 驱动的图片标签识别等个性化能力，适用于个人图床、网站资源管理和轻量文件分发。 **[查看完整功能 →](https://storage.tuquet.com/)**
 
 ![CloudFlare](readme/海报.png)
 
@@ -80,7 +75,7 @@ CloudFlare ImgBed 是支持 Docker 与 Serverless 部署的自建图床和文件
 
 **演示站点**：[CloudFlare ImgBed](https://cfbed.1314883.xyz/) · **访问密码**：`cfbed`
 
-![文件上传页面](readme/upload.png)
+![文件上传页面](https://storage.tuquet.com/assets/upload.png)
 
 <details>
     <summary>其他页面效果展示</summary>
@@ -89,31 +84,31 @@ CloudFlare ImgBed 是支持 Docker 与 Serverless 部署的自建图床和文件
   <tr>
     <td align="center" width="50%">
       <strong>登录页面</strong><br>
-      <img src="readme/login.png" alt="登录页面" width="100%">
+      <img src="https://storage.tuquet.com/assets/login.png" alt="登录页面" width="100%">
     </td>
     <td align="center" width="50%">
       <strong>上传进度</strong><br>
-      <img src="readme/uploading.png" alt="上传进度" width="100%">
+      <img src="https://storage.tuquet.com/assets/uploading.png" alt="上传进度" width="100%">
     </td>
   </tr>
   <tr>
     <td align="center" width="50%">
       <strong>文件管理</strong><br>
-      <img src="readme/dashboard.png" alt="文件管理" width="100%">
+      <img src="https://storage.tuquet.com/assets/dashboard.png" alt="文件管理" width="100%">
     </td>
     <td align="center" width="50%">
       <strong>用户管理</strong><br>
-      <img src="readme/customer-config.png" alt="用户管理" width="100%">
+      <img src="https://storage.tuquet.com/assets/customer-config.png" alt="用户管理" width="100%">
     </td>
   </tr>
   <tr>
     <td align="center" width="50%">
       <strong>状态页面</strong><br>
-      <img src="readme/status-page.png" alt="状态页面" width="100%">
+      <img src="https://storage.tuquet.com/assets/status-page.png" alt="状态页面" width="100%">
     </td>
     <td align="center" width="50%">
       <strong>公开画廊</strong><br>
-      <img src="readme/public-gallery.png" alt="公开画廊" width="100%">
+      <img src="https://storage.tuquet.com/assets/public-gallery.png" alt="公开画廊" width="100%">
     </td>
   </tr>
 </table>
@@ -132,11 +127,11 @@ CloudFlare ImgBed 是支持 Docker 与 Serverless 部署的自建图床和文件
 
 了解项目的最新功能、问题修复、兼容性变更和升级注意事项。
 
-[![更新日志](https://recent-update.cfbed.sanyue.de/cn)](https://storage.tuquet.com/guide/update-log.html)
+[![更新日志](https://recent-update.cfbed.sanyue.de/cn)](https://storage.tuquet.com/)
 
 # 4. 🌱 项目生态
 
-欢迎前往 [CloudFlare ImgBed 生态](https://storage.tuquet.com/about/ecosystem.html)，探索社区提供的扩展、应用和教程，包括：
+欢迎前往 [CloudFlare ImgBed 生态](https://storage.tuquet.com/)，探索社区提供的扩展、应用和教程，包括：
 
 - **优秀的插件扩展**：浏览器扩展，Typecho、WordPress、Obsidian 等平台的集成插件，OpenList 驱动等
 - **丰富的周边应用**：桌面客户端、Bot 辅助工具等

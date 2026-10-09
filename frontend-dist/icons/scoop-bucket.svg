@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="scoopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#scoopGrad)"/>
+  <!-- Package bucket / scoop -->
+  <path d="M8 12l8-5 8 5-8 5-8-5z" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M8 12v9l8 5 8-5v-9" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M16 17v9" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M12 9.5l8 5" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/>
+</svg>

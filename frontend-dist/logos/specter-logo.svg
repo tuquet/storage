@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="specterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="#09090b"/>
+  <rect x="0.5" y="0.5" width="31" height="31" rx="7.5" fill="none" stroke="#27272a"/>
+  <!-- Stealth Specter Hood / Automation Core -->
+  <path d="M16 7c-4.8 0-8.5 3.8-8.5 8.5v8l2.8-2 2.8 2 2.9-2 2.9 2 2.8-2 2.8 2v-8c0-4.7-3.7-8.5-8.5-8.5z" fill="url(#specterGrad)"/>
+  <circle cx="13" cy="14.5" r="1.6" fill="#09090b"/>
+  <circle cx="19" cy="14.5" r="1.6" fill="#09090b"/>
+</svg>

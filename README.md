@@ -30,7 +30,7 @@ Tuquet Storage Hub extends and hardens the modern Cloudflare Pages/Functions sta
 
 # 1. 💡 Introduction
 
-CloudFlare ImgBed is a self-hosted image and file hosting solution for Docker and serverless environments, bringing **Telegram**, **Discord**, **Cloudflare R2**, **S3-compatible storage**, **Hugging Face**, **WebDAV**, and more into one management interface. It provides file management, authentication, directory organization, content moderation, a RESTful API, and WebDAV, with a growing range of personalized AI capabilities such as image tag recognition. It is suited to personal image hosting, website asset management, and lightweight file distribution. **[View all features →](https://storage.tuquet.com/en/guide/features.html)**
+CloudFlare ImgBed is a self-hosted image and file hosting solution for Docker and serverless environments, bringing **Telegram**, **Discord**, **Cloudflare R2**, **S3-compatible storage**, **Hugging Face**, **WebDAV**, and more into one management interface. It provides file management, authentication, directory organization, content moderation, a RESTful API, and WebDAV, with a growing range of personalized AI capabilities such as image tag recognition. It is suited to personal image hosting, website asset management, and lightweight file distribution. **[View all features →](https://storage.tuquet.com/)**
 
 ![CloudFlare](readme/海报.png)
 
@@ -80,7 +80,7 @@ CloudFlare ImgBed is a self-hosted image and file hosting solution for Docker an
 
 **Demo Address**: [CloudFlare ImgBed](https://cfbed.1314883.xyz/) · **Access Password**: `cfbed`
 
-![Upload Page](readme/upload.png)
+![Upload Page](https://storage.tuquet.com/assets/upload.png)
 
 <details>
     <summary>Other page screenshots</summary>
@@ -89,31 +89,31 @@ CloudFlare ImgBed is a self-hosted image and file hosting solution for Docker an
   <tr>
     <td align="center" width="50%">
       <strong>Login Page</strong><br>
-      <img src="readme/login.png" alt="Login Page" width="100%">
+      <img src="https://storage.tuquet.com/assets/login.png" alt="Login Page" width="100%">
     </td>
     <td align="center" width="50%">
       <strong>Upload Progress</strong><br>
-      <img src="readme/uploading.png" alt="Upload Progress" width="100%">
+      <img src="https://storage.tuquet.com/assets/uploading.png" alt="Upload Progress" width="100%">
     </td>
   </tr>
   <tr>
     <td align="center" width="50%">
       <strong>File Management</strong><br>
-      <img src="readme/dashboard.png" alt="File Management" width="100%">
+      <img src="https://storage.tuquet.com/assets/dashboard.png" alt="File Management" width="100%">
     </td>
     <td align="center" width="50%">
       <strong>User Management</strong><br>
-      <img src="readme/customer-config.png" alt="User Management" width="100%">
+      <img src="https://storage.tuquet.com/assets/customer-config.png" alt="User Management" width="100%">
     </td>
   </tr>
   <tr>
     <td align="center" width="50%">
       <strong>Status Page</strong><br>
-      <img src="readme/status-page.png" alt="Status Page" width="100%">
+      <img src="https://storage.tuquet.com/assets/status-page.png" alt="Status Page" width="100%">
     </td>
     <td align="center" width="50%">
       <strong>Public Gallery</strong><br>
-      <img src="readme/public-gallery.png" alt="Public Gallery" width="100%">
+      <img src="https://storage.tuquet.com/assets/public-gallery.png" alt="Public Gallery" width="100%">
     </td>
   </tr>
 </table>
@@ -132,11 +132,11 @@ The documentation covers deployment, storage configuration, feature usage, RESTf
 
 Follow the latest features, bug fixes, compatibility changes, and upgrade notes.
 
-[![Recent Updates](https://recent-update.cfbed.sanyue.de/en)](https://storage.tuquet.com/en/guide/update-log.html)
+[![Recent Updates](https://recent-update.cfbed.sanyue.de/en)](https://storage.tuquet.com/)
 
 # 4. 🌱 Ecosystem
 
-An open-source ecosystem grows through community support. Visit the [CloudFlare ImgBed Ecosystem](https://storage.tuquet.com/en/about/ecosystem.html) page to explore the following resources and more:
+An open-source ecosystem grows through community support. Visit the [CloudFlare ImgBed Ecosystem](https://storage.tuquet.com/) page to explore the following resources and more:
 
 - **Plugin Extensions**: Browser extensions, integrations for Typecho, WordPress, and Obsidian, OpenList drivers, and more.
 - **Companion Applications**: Desktop clients, bot tools, and more.
