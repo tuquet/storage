@@ -1,0 +1,54 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'frontend-dist/**'
+      - 'functions/**'
+      - 'wrangler.toml'
+      - '.github/workflows/deploy-cloudflare-pages.yml'
+  workflow_dispatch:
+
+jobs:
+  deploy-pages:
+    name: Deploy Full-Stack to Cloudflare Pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check Cloudflare credentials
+        id: check-secrets
+        run: |
+          if [ -z "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then
+            echo "::notice ::CLOUDFLARE_API_TOKEN is not configured. If using Cloudflare Dashboard Git integration, deployments are handled directly by Cloudflare Pages."
+            echo "skip=true" >> $GITHUB_OUTPUT
+          else
+            echo "skip=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install pnpm
+        if: steps.check-secrets.outputs.skip != 'true'
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        if: steps.check-secrets.outputs.skip != 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        if: steps.check-secrets.outputs.skip != 'true'
+        run: pnpm install --frozen-lockfile
+
+      - name: Deploy to Cloudflare Pages
+        if: steps.check-secrets.outputs.skip != 'true'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy frontend-dist --project-name=tuquet-storage
