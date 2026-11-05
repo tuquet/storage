@@ -1,4 +1,4 @@
-name: CI (Storage Test Suite)
+name: "CI: test suite"
 
 on:
   push:
